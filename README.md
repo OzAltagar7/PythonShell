@@ -4,7 +4,7 @@
 
 # PythonShell
 
-A simple shell using python.
+A simple shell created using python.
 
 ### Supports
 
