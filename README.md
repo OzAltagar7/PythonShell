@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="images/demonstration.jpg" width=500>
+    <img src="images/demonstration.jpg" width=800>
 </div>
 
 # PythonShell
