@@ -19,7 +19,7 @@ def main():
         # Try executing the user command, break the loop on case of a user exit (caught as an exception)
         try:
             evaluate(command)
-        except Exit as e:
+        except Exit:
             break
 
 
@@ -57,6 +57,10 @@ def evaluate(command):
     Args:
         command (string): command to be evaluated
     """
+
+    # Remove Redundant spaces at the beggining and the end
+    command = command.strip()
+
     # Handle piping
     if '|' in command:
         # Separate stdin and stdout
@@ -77,9 +81,9 @@ def evaluate(command):
             # Error code 1 means nothing was found in the "find" comand
             elif process.returncode == 1:
                 raise NoneFound()
+            # In case of an unknown command
             else:
                 raise UnknownCommand()
-        # In case of an unknown command
         except Exception as err:
             print(str(err))
 
@@ -107,5 +111,5 @@ def evaluate(command):
         except UnknownCommand as unknown_cmd:
             print(str(unknown_cmd))
 
-if __name__ == "__main__":
+if __name__ == "_main_":
     main()
