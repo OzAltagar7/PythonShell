@@ -111,5 +111,5 @@ def evaluate(command):
         except UnknownCommand as unknown_cmd:
             print(str(unknown_cmd))
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     main()
